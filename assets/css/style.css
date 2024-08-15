@@ -259,12 +259,11 @@ a {
   border-radius: 30px;
   height: auto;
 }
-.intor-downloads h2 {
+.intro-downloads h2 {
   color: var(--white-color);
   font-weight: var(--medium);
   font-size: 2.4rem;
 }
-
 .download-links .col-lg-6 {
   flex-basis: calc(50% -1rem);
   max-width: calc(50% - 1rem);
