@@ -17,15 +17,26 @@
   --heading-color: #000;
   --body-color: #333333;
   --white-color: #fff;
+  --downloads-color: #171a3cb2;
+  --bold: 700;
+  --medium: 500;
+  --light: 400;
+  --radius: 8px;
 }
 /* ---------- end-ROOT --------- */
+
+@font-face {
+  font-family: "IRANYekan";
+  src: url(../fonts/Qs_Iranyekan\ medium.ttf);
+}
 
 html {
   font-size: 62.5%;
 }
 body {
   color: var(--body-color);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  font-family: "IRANYekan";
 }
 h1,
 h2,
@@ -40,6 +51,7 @@ h6 {
 /* ---------- TYPOGRAPHY --------- */
 h1 {
   font-size: 5rem;
+  color: var(--white-color);
 }
 
 h2 {
@@ -76,11 +88,21 @@ a {
 }
 /* ---------- end-PAGE CONTAINER --------- */
 
-/* ---------- BUTTONS --------- */
+/* ---------- General Classes --------- */
+.margin-bottom-text {
+  margin-bottom: 3rem;
+}
+.text-center {
+  text-align: center;
+}
+/* ---------- end-General Classes --------- */
+
+/* ---------- Components --------- */
+/* buttons */
 .btn {
   font-size: 1.6rem;
   padding: 0.7rem 4rem;
-  border-radius: 8px;
+  border-radius: var(--radius);
 }
 .btn-primary {
   background-color: var(--primary-color);
@@ -94,6 +116,14 @@ a {
   width: 100%;
   font-size: 2rem;
 }
+.btn-hover{
+  transition: all 200ms;
+}
+.btn-hover:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
 @media only screen and (max-width: 991px) {
   .btn {
     font-size: 1.5rem;
@@ -102,15 +132,7 @@ a {
     font-size: 1.6rem;
   }
 }
-/* ---------- end-BUTTONS --------- */
-
-/* ---------- LISTS--------- */
-li:not(:last-child) {
-  margin-left: 30px;
-}
-/* ---------- LISTS--------- */
-
-/* ---------- HAM MENU ICON--------- */
+/* ham icon */
 .main-header .ham-menu {
   cursor: pointer;
   display: none;
@@ -146,7 +168,7 @@ li:not(:last-child) {
   top: 12px;
   transform: rotate(45deg) translate(-5px, -2px);
 }
-/* ---------- end -HAM MENU ICON --------- */
+/* ---------- end-COMPONENTS --------- */
 
 /* main classes */
 /* ---------- HEADER --------- */
@@ -165,12 +187,17 @@ li:not(:last-child) {
   color: var(--primary-color);
 }
 .header-logo {
-  vertical-align: middle;
+  margin-top: 4px;
 }
 .nav-list {
   display: flex;
   justify-content: space-between;
 }
+
+.nav-list li:not(:last-child) {
+  margin-left: 30px;
+}
+
 @media only screen and (max-width: 991px) {
   .main-header .container {
     width: 80%;
@@ -193,7 +220,7 @@ li:not(:last-child) {
     opacity: 0;
     overflow: hidden;
   }
-  .nav-list li{
+  .nav-list li {
     margin-bottom: 2px;
   }
   .expanded .nav-list {
@@ -205,3 +232,64 @@ li:not(:last-child) {
   }
 }
 /* ---------- end-HEADER --------- */
+
+/* ---------- INTRO --------- */
+.intro {
+  background-image: url(../images/banner.png);
+  background-position: center center;
+  height: 72vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mobile-phone {
+  position: absolute;
+  width: 470px;
+  object-fit: contain;
+  height: 100%;
+  bottom: -140px;
+  left: 10%;
+}
+.downloads {
+  position: absolute;
+  top: 20%;
+  background-color: rgba(7, 7, 88, 0.3);
+  width: 540px;
+  padding: 25px;
+  border-radius: 30px;
+  height: auto;
+}
+.downloads h2 {
+  color: var(--white-color);
+  font-weight: var(--medium);
+  font-size: 2.4rem;
+}
+
+.download-links .col-lg-6 {
+  flex-basis: calc(50% -1rem);
+  max-width: calc(50% - 1rem);
+}
+.download-links li {
+  margin-bottom: 0.5rem;
+}
+
+.download-links li > a {
+  color: var(--white-color);
+}
+.btn-download {
+  color: var(--white-color);
+  padding: 9px 10px;
+  width: 200px;
+  border: 2px solid var(--white-color);
+  border-radius: var(--radius);
+}
+.btn-bg-white {
+  background-color: var(--white-color);
+}
+.btn-bg-white * {
+  color: black !important;
+}
+.fa-solid {
+  color: var(--white-color);
+  margin-left: 8px;
+}
